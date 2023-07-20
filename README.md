@@ -1,10 +1,25 @@
-# Code Explanation
-The *concatenate* function receives a directory path, a file type and a new column name as arguments. It iterates through all the files in the specified directory that have the same file extension as the one provided as an argument. For each file, it reads it as a Pandas DataFrame, applies a lambda function that concatenates all non-null values of each row into a string separated by the provided separator, and saves the resulting DataFrame to a new file with the same name as the original one, but inside a newly created *concatened* directory.
+# Concatenate
 
-If the specified directory does not exist, the *createRepository* function is called to create it. If the directory already exists, nothing happens.
+Script Description:
+This Python script aims to concatenate the data from multiple Excel files in a specified directory and save the merged data to new Excel files in a subdirectory named 'concatened'. It uses the pandas library to read and manipulate the Excel files.
 
-Example Usage
-``` concatenate('/path/to/directory', '.xlsx', 'concatenated_values')
-```
+Usage:
 
-This will iterate through all Excel files (*'.xlsx'*) in the */path/to/directory* directory, concatenate all non-null values in each row into a string separated by a colon and a dash (*:* and *-*), add a new column with the name *'concatenated_values'*, and save the resulting DataFrame to a new Excel file with the same name as the original one, but inside a new *concatened* directory.# concatenate
+Place all the Excel files you want to concatenate into a directory named 'teste'. Ensure that the files have the extension '.xlsx'.
+Run the script in your Python environment. It will read each Excel file in the 'teste' directory, concatenate the data, and save the merged data into new Excel files.
+Functions:
+
+concatenate(dir_path, type_file, new_column): This function takes three parameters:
+
+dir_path: The directory path where the Excel files are located.
+type_file: The file extension of the Excel files to be processed (e.g., 'xlsx').
+new_column: The name of the new column that will store the concatenated data.
+createRepository(dir_path): This function takes one parameter:
+
+dir_path: The directory path where the new 'concatened' subdirectory will be created.
+Note:
+
+Ensure that you have pandas installed in your Python environment to run the script. You can install it using pip install pandas.
+The script will create a subdirectory named 'concatened' inside the 'teste' directory and save the concatenated Excel files there.
+Author:
+Adsandro Carvalho / adsandroxerd@gmail.com
